@@ -64,7 +64,7 @@ export default function Banner() {
                         alignItems: 'center',
                     }}>
                     <div className='flex items-center justify-center w-full h-full bg-gray-900/70 '>
-                        <div className=''>
+                        <div className='px-3 lg:px-0'>
                             <h2 className='text-3xl font-semibold text-white lg:text-4xl'>Explore Books Anytime, Anywhere....</h2>
                             <h4 className=' font-medium text-gray-200 mt-2'>Enjoy the convenience of accessing our library resources from anywhere, anytime. Here's what you'll get:</h4>
 
@@ -80,7 +80,7 @@ export default function Banner() {
                                 to=''
                                 
                             >
-                            <button className='w-full px-4 py-3 mt-8  text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'>Browse Our Digital Library</button>
+                            <button className=' px-4 py-3 mt-8  text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'>Browse Our Digital Library</button>
                                 
                             </Link>
                         </div>

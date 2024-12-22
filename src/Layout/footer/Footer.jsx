@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="w-full mx-auto pt-16 bg-gray-900">
-            <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="w-11/12 mx-auto space-y-6 md:space-y-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {/* Section 1 */}
                 <div className="flex flex-col">
                     <img className='w-[80px]' src={logo} alt="" />
@@ -67,9 +67,9 @@ const Footer = () => {
                 </div>
 
                 {/* Section 4 */}
-                <div className='flex justify-end items-end'>
+                <div className='flex  items-end'>
                     
-                    <fieldset className="form-control w-80">
+                    <fieldset className="form-control">
                         <label className="label">
                             <span className="text-lg font-semibold text-gray-400 mb-3">Enter your email address</span>
                         </label>
