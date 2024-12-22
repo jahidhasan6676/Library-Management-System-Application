@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import { useState } from "react";
 import SocialLogin from "../../Shared/SocialAuth/SocialLogin";
+import { toast } from "react-toastify";
 
 
 
@@ -41,6 +42,7 @@ const Register = () => {
                 setUser(result.user);
                 updateUserProfile({displayName:name, photoURL:photo})
                 navigate("/")
+                toast.success("Successfully Register")
             })
             .catch(err => {
                 console.log(err)

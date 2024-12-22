@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
+import { toast } from "react-toastify";
 
 
 const SocialLogin = () => {
@@ -12,6 +13,7 @@ const SocialLogin = () => {
             console.log("google sign in", result.user);
             setUser(result.user);
             navigate("/");
+            toast.success("Successfully Sing In")
         })
         .catch(error => {
             console.log(error.message)
