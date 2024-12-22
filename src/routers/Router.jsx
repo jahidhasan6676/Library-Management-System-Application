@@ -8,6 +8,7 @@ import AddBooks from "../Pages/Add-Books/AddBooks";
 import AllBooks from "../Pages/All-Books/AllBooks";
 import BooksUpdate from "../Pages/All-Books/BooksUpdate";
 import PrivateRoute from "./PrivateRoute";
+import BookCategoryAllCard from "../Components/BookCategoryAllCard";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path:"/updateBook/:id",
                 element:<PrivateRoute><BooksUpdate></BooksUpdate></PrivateRoute>
+            },
+            {
+                path:"/bookCategoryCard/:category",
+                element:<BookCategoryAllCard></BookCategoryAllCard>
             },
             {
                 path:"/login",
