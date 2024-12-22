@@ -16,7 +16,7 @@ const AddBooks = () => {
         const authorName = form.authorName.value;
         const category = form.category.value;
         const description = form.description.value;
-        const rating = form.rating.value;
+        const rating = parseInt(form.rating.value);
         const bookData = {
             image,
             bookName,

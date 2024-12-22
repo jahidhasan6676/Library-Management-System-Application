@@ -17,7 +17,7 @@ const BookCategoryAllCard = () => {
         setBooks(data)
 
     }
-    console.log(books)
+    // console.log(books)
     return (
         <div className="bg-gray-100 py-16">
               <h1 className="text-2xl font-bold text-center mb-6">Books by Category</h1>

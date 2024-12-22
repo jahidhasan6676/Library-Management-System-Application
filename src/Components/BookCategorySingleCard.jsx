@@ -1,4 +1,5 @@
-import ReactStars from "react-rating-stars-component";
+
+import { Link } from "react-router-dom";
 
 const BookCategorySingleCard = ({ book }) => {
     const { _id, bookName, authorName, quantity, category, rating, image } = book || {};
@@ -31,7 +32,7 @@ const BookCategorySingleCard = ({ book }) => {
                 </div>
 
 
-                <Link>
+                <Link to={`/categoryCardDetails/${_id}`}>
                     <button
                         className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">Details</button>
                 </Link>
