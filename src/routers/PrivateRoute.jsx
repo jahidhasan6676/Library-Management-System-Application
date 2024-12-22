@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
     const {user, loading} = UseAuth();
 
     if(loading){
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
 
     if(user && user?.email){

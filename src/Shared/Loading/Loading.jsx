@@ -1,7 +1,7 @@
 
 const Loading = () => {
     return (
-        <div className='flex items-center justify-center w-full min-h-[calc(100vh-305px)]'>
+        <div className='flex items-center justify-center w-full min-h-[calc(100vh-360px)]'>
             <div
                 aria-label='Loading...'
                 role='status'
@@ -86,6 +86,7 @@ const Loading = () => {
                 </svg>
                 <span className='text-4xl font-medium text-gray-500'>Loading...</span>
             </div>
+           
         </div>
     );
 };
