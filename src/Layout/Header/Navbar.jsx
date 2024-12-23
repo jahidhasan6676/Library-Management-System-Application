@@ -48,9 +48,6 @@ const Navbar = () => {
                     <li className="mx-4 my-4 lg:my-0">
                         <NavLink to="/borrowBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Borrowed Books</NavLink>
                     </li>
-                    {/* <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/g" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Home</NavLink>
-                    </li> */}
 
                     {
                         user ?
@@ -59,7 +56,7 @@ const Navbar = () => {
                                 <img
                                     data-tooltip-id="user-tooltip"
                                     data-tooltip-content={user?.displayName}
-                                    className="w-12 h-12 rounded-full cursor-pointer"
+                                    className="w-10 h-10 rounded-full cursor-pointer"
                                     src={user?.photoURL}
                                     referrerPolicy='no-referrer'
                                     alt="User image"

@@ -10,6 +10,11 @@ const BorrowedBooks = () => {
     const { user } = UseAuth();
     const axiosSecure = UseAxiosSecure();
     const [borrowBooks, setBorrowBooks] = useState([]);
+
+    useEffect(() => {
+        document.title = "Borrow Books | Library"
+      }, [])
+
     useEffect(() => {
         fetchBorrowBooks()
 

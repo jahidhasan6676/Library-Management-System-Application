@@ -16,6 +16,10 @@ const CategoryCardDetails = () => {
     const [book, setBook] = useState({});
     const borrowDate = new Date().toLocaleDateString();
     const axiosSecure = UseAxiosSecure();
+
+    useEffect(() => {
+        document.title = "Books Category Details | Library"
+      }, [])
     
     useEffect(() => {
         fetchBookDetailsData()

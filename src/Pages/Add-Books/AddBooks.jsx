@@ -1,8 +1,9 @@
-import axios from "axios";
+
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import UseAuth from "../../Hooks/UseAuth";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import { useEffect } from "react";
 
 
 const AddBooks = () => {
@@ -10,6 +11,11 @@ const AddBooks = () => {
     const navigate = useNavigate();
     const {user} = UseAuth();
     const axiosSecure = UseAxiosSecure();
+
+    useEffect(() => {
+        document.title = "Add Books | Library"
+      }, [])
+
     const handleAddBookSubmit = async e =>{
         e.preventDefault();
         const form = e.target;

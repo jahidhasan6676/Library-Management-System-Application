@@ -12,6 +12,12 @@ const AllBooks = () => {
 
   const [books, setBooks] = useState([]);
   const [viewMode, setViewMode] = useState("card");
+
+  useEffect(() => {
+    document.title = "All Books store | Library"
+  }, [])
+
+
   useEffect(() => {
     fetchAllBooks()
 

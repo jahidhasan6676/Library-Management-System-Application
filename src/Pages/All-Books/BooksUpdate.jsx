@@ -9,6 +9,11 @@ const BooksUpdate = () => {
   const {id} = useParams(); 
   const axiosSecure = UseAxiosSecure();
   const [book, setBook] = useState({});
+
+  useEffect(() => {
+    document.title = "Books Update | Library"
+  }, [])
+
   useEffect(()=>{
     fetchBookData()
      

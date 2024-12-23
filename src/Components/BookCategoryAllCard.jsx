@@ -9,6 +9,11 @@ const BookCategoryAllCard = () => {
     const [books, setBooks] = useState([]);
     const {category} = useParams();
     // const axiosSecure = UseAxiosSecure();
+
+    useEffect(() => {
+        document.title = "Books Category | Library"
+      }, [])
+
     useEffect(() => {
         fetchCategoryBooks()
 
