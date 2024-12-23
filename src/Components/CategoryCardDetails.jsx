@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 // import ReactStars from "react-rating-stars-component";
 
 import UseAuth from "../Hooks/UseAuth";
+import { toast } from "react-toastify";
 // import Rating from "react-rating";
 
 
@@ -22,6 +23,37 @@ const CategoryCardDetails = () => {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/books/${id}`);
         setBook(data)
 
+    }
+
+    const handleBorrowedData = async e =>{
+        e.preventDefault();
+        const form = e.target;
+        const bookName = form.bookName.value;
+        const email = user?.email;
+        const name = user?.displayName;
+        const returnDate = form.returnDate.value;
+        const bookId = book._id;
+        const image = book.image;
+        const category = book.category;
+        const borrowedData = {
+            bookName,
+            email,
+            name,
+            category,
+            returnDate,
+            bookId,
+            owner:book.email
+            
+        }
+        try{
+            await axios.post(`${import.meta.env.VITE_API_URL}/borrow`, borrowedData);
+            form.reset();
+            toast.success("Book Borrow successfully done");
+            // navigate()
+        }catch(err){
+            console.log(err)
+            toast.error(err.message)
+        }
     }
 
     return (
@@ -71,8 +103,9 @@ const CategoryCardDetails = () => {
 
 
                         <button
+                            disabled={book?.quantity <= 0 }
                             onClick={() => setShowModal(true)}
-                            className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
+                            className="disabled:cursor-not-allowed bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
                         >
                             Borrow
                         </button>
@@ -92,12 +125,13 @@ const CategoryCardDetails = () => {
                             ✕
                         </button>
                         <h3 className="font-bold text-lg mb-4">Borrowed Book User</h3>
-                        <form className="space-y-4">
+                        <form onSubmit={handleBorrowedData} className="space-y-4">
                             <div>
                                 <label className="block text-sm font-medium mb-1">Book Name</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     name="bookName"
+                                    defaultValue={book.bookName}
                                     className="input input-bordered w-full"
                                 />
                             </div>

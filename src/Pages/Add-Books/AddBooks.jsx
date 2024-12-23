@@ -6,7 +6,7 @@ import UseAuth from "../../Hooks/UseAuth";
 
 const AddBooks = () => {
     const navigate = useNavigate();
-    // const {user} = UseAuth();
+    const {user} = UseAuth();
     const handleAddBookSubmit = async e =>{
         e.preventDefault();
         const form = e.target;
@@ -17,6 +17,7 @@ const AddBooks = () => {
         const category = form.category.value;
         const description = form.description.value;
         const rating = parseInt(form.rating.value);
+        const email = user?.email;
         const bookData = {
             image,
             bookName,
@@ -25,7 +26,7 @@ const AddBooks = () => {
             category,
             description,
             rating,
-           
+            email
         }
        
         try{
