@@ -13,6 +13,8 @@ const CategoryCardDetails = () => {
     const { id } = useParams();
     const [showModal, setShowModal] = useState(false);
     const [book, setBook] = useState({});
+    const borrowDate = new Date().toLocaleDateString();
+    
     useEffect(() => {
         fetchBookDetailsData()
 
@@ -35,12 +37,16 @@ const CategoryCardDetails = () => {
         const bookId = book._id;
         const image = book.image;
         const category = book.category;
+        
+        
         const borrowedData = {
             bookName,
             email,
             name,
+            image,
             category,
             returnDate,
+            borrowDate,
             bookId,
             owner:book.email
             
@@ -49,6 +55,7 @@ const CategoryCardDetails = () => {
             await axios.post(`${import.meta.env.VITE_API_URL}/borrow`, borrowedData);
             form.reset();
             toast.success("Book Borrow successfully done");
+            fetchBookDetailsData()
             // navigate()
         }catch(err){
             console.log(err)

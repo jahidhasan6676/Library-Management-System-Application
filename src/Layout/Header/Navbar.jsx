@@ -46,7 +46,7 @@ const Navbar = () => {
                         <NavLink to="/addBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Add Books</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/borrowedBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Borrowed Books</NavLink>
+                        <NavLink to="/borrowBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Borrowed Books</NavLink>
                     </li>
                     {/* <li className="mx-4 my-4 lg:my-0">
                         <NavLink to="/g" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Home</NavLink>
