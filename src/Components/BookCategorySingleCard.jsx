@@ -1,4 +1,5 @@
-
+// import Rating from "react-rating";
+// import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 
 const BookCategorySingleCard = ({ book }) => {
@@ -21,14 +22,13 @@ const BookCategorySingleCard = ({ book }) => {
 
 
                 <div className="flex items-center mt-2">
-                    <ReactStars
-                        count={5}
-                        size={20}
-                        isHalf={true}
-                        value={rating}
-                        edit={false}
-                        activeColor="#ffd700"
-                    />
+                    {/* <Rating
+                        initialRating={book?.rating || 0}
+                        readonly
+                        emptySymbol="far fa-star"
+                        fullSymbol="fas fa-star"
+                        fractions={2}
+                    /> */}
                 </div>
 
 

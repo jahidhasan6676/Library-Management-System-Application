@@ -1,11 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
+
+import UseAuth from "../Hooks/UseAuth";
+// import Rating from "react-rating";
+
 
 const CategoryCardDetails = () => {
+    const { user } = UseAuth();
     const { id } = useParams();
-
+    const [showModal, setShowModal] = useState(false);
     const [book, setBook] = useState({});
     useEffect(() => {
         fetchBookDetailsData()
@@ -18,7 +23,7 @@ const CategoryCardDetails = () => {
         setBook(data)
 
     }
-    console.log(book)
+
     return (
         <div className=" py-16 bg-gray-50 ">
             <div className=" w-11/12 mx-auto bg-gray-100 rounded-md py-6">
@@ -41,14 +46,22 @@ const CategoryCardDetails = () => {
 
 
                         <div className="flex items-center mb-4">
-                            <ReactStars
+                            {/* <ReactStars
                                 count={5}
                                 size={24}
                                 isHalf={true}
-                                value={book.rating}
+                                value={book?.rating || 0}
                                 edit={false}
                                 activeColor="#ffd700"
-                            />
+                            /> */}
+
+                            {/* <Rating
+                                initialRating={book?.rating || 0}
+                                readonly
+                                emptySymbol="far fa-star" 
+                                fullSymbol="fas fa-star" 
+                                fractions={2} 
+                            /> */}
                             <span className="ml-2 text-gray-600">{book.rating}</span>
                         </div>
 
@@ -58,6 +71,7 @@ const CategoryCardDetails = () => {
 
 
                         <button
+                            onClick={() => setShowModal(true)}
                             className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
                         >
                             Borrow
@@ -65,6 +79,68 @@ const CategoryCardDetails = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* Modal for Borrowed book */}
+            {showModal && (
+                <div className="modal modal-open pt-20">
+                    <div className="modal-box  relative">
+                        <button
+                            className="btn btn-sm btn-circle absolute right-2 top-2"
+                            onClick={() => setShowModal(false)}
+                        >
+                            ✕
+                        </button>
+                        <h3 className="font-bold text-lg mb-4">Borrowed Book User</h3>
+                        <form className="space-y-4">
+                            <div>
+                                <label className="block text-sm font-medium mb-1">Book Name</label>
+                                <input
+                                    type="email"
+                                    name="bookName"
+                                    className="input input-bordered w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium mb-1">Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    defaultValue={user?.email}
+                                    readOnly
+                                    className="input input-bordered w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium mb-1">
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    defaultValue={user?.displayName}
+                                    className="input input-bordered w-full"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium mb-1">
+                                    Return Date
+                                </label>
+                                <input
+                                    type="date"
+                                    name="returnDate"
+                                    required
+                                    className="input input-bordered w-full"
+                                />
+                            </div>
+                            <button className="btn btn-primary w-full mt-4" type="submit">
+                                Submission
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
 
         </div>
 
