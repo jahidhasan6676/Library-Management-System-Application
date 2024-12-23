@@ -2,7 +2,7 @@
 
 const BorrowBooksCard = ({ borrow, handleDelete }) => {
     const { _id, bookName, authorName, quantity, category, image, bookId } = borrow || {};
-    console.log(borrow)
+
     return (
         <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
 

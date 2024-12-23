@@ -1,12 +1,13 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
 
 const BooksUpdate = () => {
     
   const {id} = useParams(); 
-
+  const axiosSecure = UseAxiosSecure();
   const [book, setBook] = useState({});
   useEffect(()=>{
     fetchBookData()
@@ -15,7 +16,7 @@ const BooksUpdate = () => {
   },[id]);
 
   const fetchBookData = async ()=>{
-    const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/books/${id}`);
+    const {data} = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/books/${id}`);
     setBook(data)
    
   }
@@ -40,7 +41,7 @@ const BooksUpdate = () => {
 
         // data update backend
       try{
-        await axios.put(`${import.meta.env.VITE_API_URL}/update-book/${id}`, bookData)
+        await axiosSecure.put(`${import.meta.env.VITE_API_URL}/update-book/${id}`, bookData)
         form.reset()
         toast.success("Data Update Successfully");
         // navigate("/my-posted-jobs")

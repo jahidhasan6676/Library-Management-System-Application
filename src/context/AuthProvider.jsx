@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext/AuthContext';
 import { auth } from '../firebase/firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import axios from 'axios';
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
@@ -45,15 +46,27 @@ const AuthProvider = ({children}) => {
     // observation setup
     useEffect(() => {
         const unSubscriber = onAuthStateChanged(auth, (currentUser) => {
-            if(currentUser){
+           
                 setUser(currentUser);
-                console.log("observe" ,currentUser)
-                
-            }
-            else{
-                setUser(null)
-            }
-            setLoading(false);
+                console.log("observe" ,currentUser?.email)
+
+                if(currentUser?.email){
+                    const user = {email: currentUser?.email};
+                    axios.post(`${import.meta.env.VITE_API_URL}/jwt`, user, {withCredentials: true})
+                    .then(res => {
+                        console.log("signIn", res.data);
+                        setLoading(false);
+                    })
+                }
+                else{
+                    axios.post(`${import.meta.env.VITE_API_URL}/logout`, {}, {withCredentials: true})
+                    .then(res => {
+                        console.log("logout", res.data);
+                        setLoading(false);
+                    })
+                }
+          
+            
             return () => {
                 unSubscriber();
             }

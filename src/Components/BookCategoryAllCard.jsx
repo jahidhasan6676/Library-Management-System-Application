@@ -2,11 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BookCategorySingleCard from "./BookCategorySingleCard";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 
 
 const BookCategoryAllCard = () => {
     const [books, setBooks] = useState([]);
     const {category} = useParams();
+    // const axiosSecure = UseAxiosSecure();
     useEffect(() => {
         fetchCategoryBooks()
 

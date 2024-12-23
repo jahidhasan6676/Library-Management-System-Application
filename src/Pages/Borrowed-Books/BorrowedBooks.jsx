@@ -1,12 +1,14 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import BorrowBooksCard from "./BorrowBooksCard";
 import { toast } from "react-toastify";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const BorrowedBooks = () => {
     const { user } = UseAuth();
+    const axiosSecure = UseAxiosSecure();
     const [borrowBooks, setBorrowBooks] = useState([]);
     useEffect(() => {
         fetchBorrowBooks()
@@ -14,7 +16,7 @@ const BorrowedBooks = () => {
     }, [user?.email]);
 
     const fetchBorrowBooks = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/borrow/${user?.email}`)
+        const { data } = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/borrow/${user?.email}`)
         setBorrowBooks(data)
 
     }
@@ -23,7 +25,7 @@ const BorrowedBooks = () => {
     const handleDelete = async (id, bookId) => {
 
         try {
-            const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/borrow/${id}?bookId=${bookId}`)
+            const { data } = await axiosSecure.delete(`${import.meta.env.VITE_API_URL}/borrow/${id}?bookId=${bookId}`)
             console.log(data)
             fetchBorrowBooks()
             toast.success("Data Successfully Deleted");

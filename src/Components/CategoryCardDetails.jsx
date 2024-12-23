@@ -1,10 +1,11 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import ReactStars from "react-rating-stars-component";
 
 import UseAuth from "../Hooks/UseAuth";
 import { toast } from "react-toastify";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 // import Rating from "react-rating";
 
 
@@ -14,6 +15,7 @@ const CategoryCardDetails = () => {
     const [showModal, setShowModal] = useState(false);
     const [book, setBook] = useState({});
     const borrowDate = new Date().toLocaleDateString();
+    const axiosSecure = UseAxiosSecure();
     
     useEffect(() => {
         fetchBookDetailsData()
@@ -22,7 +24,7 @@ const CategoryCardDetails = () => {
     }, [id]);
 
     const fetchBookDetailsData = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/books/${id}`);
+        const { data } = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/books/${id}`);
         setBook(data)
 
     }
@@ -52,14 +54,14 @@ const CategoryCardDetails = () => {
             
         }
         try{
-            await axios.post(`${import.meta.env.VITE_API_URL}/borrow`, borrowedData);
+            await axiosSecure.post(`${import.meta.env.VITE_API_URL}/borrow`, borrowedData);
             form.reset();
             toast.success("Book Borrow successfully done");
             fetchBookDetailsData()
             // navigate()
         }catch(err){
             console.log(err)
-            toast.error(err.message)
+            toast.error(err.response.data)
         }
     }
 

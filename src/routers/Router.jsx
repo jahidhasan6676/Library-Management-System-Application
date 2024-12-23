@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/categoryCardDetails/:id",
-                element:<CategoryCardDetails></CategoryCardDetails>
+                element:<PrivateRoute><CategoryCardDetails></CategoryCardDetails></PrivateRoute>
             },
             {
                 path:"/borrowBooks",

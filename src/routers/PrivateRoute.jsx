@@ -5,6 +5,7 @@ import Loading from "../Shared/Loading/Loading";
 
 const PrivateRoute = ({children}) => {
     const {user, loading} = UseAuth();
+    // const navigate = useNavigate();
 
     if(loading){
         return <Loading></Loading>;

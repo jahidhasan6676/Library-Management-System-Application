@@ -1,12 +1,14 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import AllBooksCard from "./AllBooksCard";
 import AllBooksTable from "./AllBooksTable";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const AllBooks = () => {
   // const {user} = UseAuth();
+  const axiosSecure = UseAxiosSecure();
 
   const [books, setBooks] = useState([]);
   const [viewMode, setViewMode] = useState("card");
@@ -16,13 +18,13 @@ const AllBooks = () => {
   }, []);
 
   const fetchAllBooks = async () => {
-    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/books`)
+    const { data } = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/books`)
     setBooks(data)
 
   }
 
   const filterAvailableBooks = async () => {
-    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/books?filter=true`)
+    const { data } = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/books?filter=true`)
     setBooks(data)
   }
 

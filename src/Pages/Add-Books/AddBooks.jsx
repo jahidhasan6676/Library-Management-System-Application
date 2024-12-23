@@ -2,11 +2,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import UseAuth from "../../Hooks/UseAuth";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const AddBooks = () => {
+
     const navigate = useNavigate();
     const {user} = UseAuth();
+    const axiosSecure = UseAxiosSecure();
     const handleAddBookSubmit = async e =>{
         e.preventDefault();
         const form = e.target;
@@ -30,7 +33,7 @@ const AddBooks = () => {
         }
        
         try{
-            await axios.post(`${import.meta.env.VITE_API_URL}/books`, bookData);
+            await axiosSecure.post(`${import.meta.env.VITE_API_URL}/books`, bookData);
             form.reset();
             toast.success("Data Successfully Added");
             navigate()
