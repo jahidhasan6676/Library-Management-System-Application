@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { toast } from "react-toastify";
 import UseAxiosSecure from "../Hooks/UseAxiosSecure";
-// import Rating from "react-rating";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 
 const CategoryCardDetails = () => {
@@ -90,32 +91,27 @@ const CategoryCardDetails = () => {
                         <p className="text-lg text-gray-600 mb-2"><span className="font-semibold">Stock Quantity:</span> {book.quantity}</p>
 
 
-                        <div className="flex items-center mb-4">
-                            {/* <ReactStars
-                count={5}
-                size={24}
-                isHalf={true}
-                value={book?.rating || 0}
-                edit={false}
-                activeColor="#ffd700"
-            /> */}
-
-                            <span className="ml-2 text-gray-600">{book.rating}</span>
+                        <div className=" mb-4">
+                            <div className="flex items-center gap-3 ">  <Rating
+                                style={{ maxWidth: 100 }}
+                                value={book.rating}
+                                readOnly
+                            />{book.rating}</div>
                         </div>
 
                         <p className="text-lg text-gray-600 mb-4">
                             {book.description}
                         </p>
 
-                        
-                            <button
-                                disabled={book?.quantity <= 0}
-                                onClick={() => setShowModal(true)}
-                                className="disabled:cursor-not-allowed w-fit px-6 py-3 text-white font-semibold bg-pink-500 rounded-full hover:bg-pink-600 focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition-all duration-300 "
-                            >
-                                Borrow
-                            </button>
-                       
+
+                        <button
+                            disabled={book?.quantity <= 0}
+                            onClick={() => setShowModal(true)}
+                            className="disabled:cursor-not-allowed w-fit px-6 py-3 text-white font-semibold bg-pink-500 rounded-full hover:bg-pink-600 focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition-all duration-300 "
+                        >
+                            Borrow
+                        </button>
+
                     </div>
                 </div>
             </div>

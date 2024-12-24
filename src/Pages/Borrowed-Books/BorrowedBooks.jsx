@@ -4,6 +4,7 @@ import UseAuth from "../../Hooks/UseAuth";
 import BorrowBooksCard from "./BorrowBooksCard";
 import { toast } from "react-toastify";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const BorrowedBooks = () => {
@@ -13,7 +14,7 @@ const BorrowedBooks = () => {
 
     useEffect(() => {
         document.title = "Borrow Books | Library"
-      }, [])
+    }, [])
 
     useEffect(() => {
         fetchBorrowBooks()
@@ -28,21 +29,20 @@ const BorrowedBooks = () => {
 
     // delete user add borrow books
     const handleDelete = async (id, bookId) => {
-
         try {
             const { data } = await axiosSecure.delete(`${import.meta.env.VITE_API_URL}/borrow/${id}?bookId=${bookId}`)
             console.log(data)
             fetchBorrowBooks()
-            toast.success("Data Successfully Deleted");
-          
+            toast.success("Book Successfully Returned");
+
         } catch (err) {
             console.log(err)
             toast.error(err.message)
         }
     }
     return (
-        <div className="bg-gray-100 py-16">
-            <h2 className="text-center text-2xl font-bold">My all borrow books</h2>
+        <div className="bg-gray-100 min-h-[calc(100vh-355px)] py-16">
+            <h2 className="text-center text-2xl font-semibold">Your Borrowed Books Dashboard</h2>
             <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
                 {
                     borrowBooks.map(borrow => <BorrowBooksCard key={borrow._id} borrow={borrow} handleDelete={handleDelete}></BorrowBooksCard>)

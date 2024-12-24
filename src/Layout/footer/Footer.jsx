@@ -11,7 +11,7 @@ const Footer = () => {
                     <p className="mt-2 text-gray-200">
                         Books Lovers Ltd.
                         <br />
-                        Providing reliable tech since 1992
+                        Nurturing a passion for reading and knowledge since 1992.
                     </p>
 
                     {/* social icon */}
@@ -37,7 +37,7 @@ const Footer = () => {
                     <nav className="flex flex-col gap-2">
                         <Link className="text-gray-300 hover:text-blue-400">Home</Link>
                         <Link className="text-gray-300 hover:text-blue-400">All Books</Link>
-                        <Link className="text-gray-300 hover:text-blue-400">And Books</Link>
+                        <Link className="text-gray-300 hover:text-blue-400">Add Books</Link>
                         <Link className="text-gray-300 hover:text-blue-400">Borrowed Books</Link>
                         <Link className="text-gray-300 hover:text-blue-400">Help center</Link>
 
@@ -61,31 +61,40 @@ const Footer = () => {
                             <i class="fa-solid fa-hourglass-half"></i> Sunday-Wednesday: 9:00 AM - 6:00 PM
                         </p>
                         <p className="text-gray-300 hover:text-blue-400">
-                            <i class="fa-solid fa-hourglass-half"></i> Sunday-Wednesday: 9:00 AM - 6:00 PM
+                            <i className="fas fa-clock"></i> Sat: 10:00 AM - 4:00 PM
                         </p>
                     </nav>
                 </div>
 
                 {/* Section 4 */}
-                <div className='flex  items-end'>
-                    
+
+                <div>
+                    <h6 className="text-lg font-semibold text-gray-400 mb-3">Subscribe to Our Newsletter</h6>
+                    <p className="text-sm text-gray-300 mb-3">
+                        Stay updated with our latest collections, book recommendations, and events.
+                    </p>
                     <fieldset className="form-control">
                         <label className="label">
-                            <span className="text-lg font-semibold text-gray-400 mb-3">Enter your email address</span>
+                            <span className="text-gray-300">Enter your email address</span>
                         </label>
-                        <div className="join">
+                        <div className="flex">
                             <input
-                                type="text"
-                                placeholder="username@site.com"
-                                className="input input-bordered join-item" />
-                            <button className="btn btn-primary join-item">Send</button>
+                                type="email"
+                                placeholder="yourname@example.com"
+                                className="flex-1 px-3 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg">
+                                Subscribe
+                            </button>
                         </div>
                     </fieldset>
                 </div>
+
+                
             </div>
-           
+
             <div className="text-center block w-full mt-8 pb-3">
-            <div className="divider w-11/12 mx-auto"></div>
+                <div className="divider w-11/12 mx-auto"></div>
                 <p className="text-sm text-gray-400 pb-3">
                     &copy; {new Date().getFullYear()} Books Lovers. All rights reserved.
                 </p>

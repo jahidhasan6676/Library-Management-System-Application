@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Shared/SocialAuth/SocialLogin";
 import UseAuth from "../../Hooks/UseAuth";
 import { useState } from "react";
@@ -11,6 +11,7 @@ const Login = () => {
     const {loginUser, setUser} = UseAuth();
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -27,7 +28,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 setUser(result.user);
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
                 toast.success("Successfully login")
             })
             .catch(err => {

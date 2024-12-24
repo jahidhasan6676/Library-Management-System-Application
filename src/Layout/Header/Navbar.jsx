@@ -8,13 +8,15 @@ import UseAuth from "../../Hooks/UseAuth";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { user, signOutUser } = UseAuth();
+    const { user, signOutUser, loading, setLoading } = UseAuth();
+    
     const navigate = useNavigate();
 
     const handleSignOut = () => {
         signOutUser()
         navigate("/login")
     }
+    
 
     return (
         <nav className="py-5 bg-gray-800 text-white w-full  fixed top-0 z-50">
@@ -68,13 +70,13 @@ const Navbar = () => {
                             </div>
 
                             :
-
+                             
                             <div className="flex justify-between gap-2">
                                 <Link to="/login">
-                                    <button className=" text-white bg-gradient-to-r from-teal-500 to-cyan-500 py-2 px-4 rounded-lg font-bold hover:from-teal-600 hover:to-cyan-600">Login</button>
+                                    <button className=" px-4 py-2 text-blue-500 font-semibold border border-gray-500 rounded-full hover:bg-gray-800  transition duration-300">Login</button>
                                 </Link>
                                 <Link to="/register">
-                                    <button className=" text-white bg-gradient-to-r from-teal-500 to-cyan-500 py-2 px-4 rounded-lg font-bold hover:from-teal-600 hover:to-cyan-600">Register</button>
+                                    <button className=" px-4 py-2 text-blue-500 font-semibold border border-gray-500 rounded-full hover:bg-gray-800  transition duration-300">Register</button>
                                 </Link>
                             </div>
 

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-// import ReactStars from "react-rating-stars-component";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+
 const BookCategorySingleCard = ({ book }) => {
     const { _id, bookName, authorName, quantity, category, rating, image } = book || {};
 
@@ -27,9 +29,15 @@ const BookCategorySingleCard = ({ book }) => {
                 <p className="text-sm text-gray-600 mt-1">Quantity: <span className="font-medium">{quantity}</span></p>
 
                 <div className="flex items-center">
-                    {/* Here you can display the rating */}
-                    {/* <ReactStars count={5} value={numericRating} size={20} edit={false} /> */}
-                    <span className="text-sm text-yellow-500 font-semibold">{rating}</span>
+                    <div className=" mt-2">
+
+                        <div className="flex items-center gap-3 ">  <Rating
+                            style={{ maxWidth: 100 }}
+                            value={rating}
+                            readOnly
+                        />{rating}</div>
+                    </div>
+                   
                 </div>
 
 
