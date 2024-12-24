@@ -19,7 +19,7 @@ const BorrowBooksCard = ({ borrow, handleDelete }) => {
                 <p className="text-sm text-gray-600">Category: {category}</p>
                 <button
                     onClick={()=>handleDelete(_id, bookId)}
-                    className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">Return</button>
+                    className="mt-4 px-6 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 transition-all duration-300">Return</button>
               
             </div>
         </div>

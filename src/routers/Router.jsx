@@ -12,6 +12,7 @@ import BookCategoryAllCard from "../Components/BookCategoryAllCard";
 import CategoryCardDetails from "../Components/CategoryCardDetails";
 import BorrowedBooks from "../Pages/Borrowed-Books/BorrowedBooks";
 
+
 const router = createBrowserRouter([
     {
         path:"/",
@@ -54,6 +55,7 @@ const router = createBrowserRouter([
                 path:"/register",
                 element:<Register></Register>
             }
+            
         ]
     }
 ])

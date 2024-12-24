@@ -19,8 +19,8 @@ const CategoryCardDetails = () => {
 
     useEffect(() => {
         document.title = "Books Category Details | Library"
-      }, [])
-    
+    }, [])
+
     useEffect(() => {
         fetchBookDetailsData()
 
@@ -33,7 +33,7 @@ const CategoryCardDetails = () => {
 
     }
 
-    const handleBorrowedData = async e =>{
+    const handleBorrowedData = async e => {
         e.preventDefault();
         const form = e.target;
         const bookName = form.bookName.value;
@@ -43,8 +43,8 @@ const CategoryCardDetails = () => {
         const bookId = book._id;
         const image = book.image;
         const category = book.category;
-        
-        
+
+
         const borrowedData = {
             bookName,
             email,
@@ -54,16 +54,16 @@ const CategoryCardDetails = () => {
             returnDate,
             borrowDate,
             bookId,
-            owner:book.email
-            
+            owner: book.email
+
         }
-        try{
+        try {
             await axiosSecure.post(`${import.meta.env.VITE_API_URL}/borrow`, borrowedData);
             form.reset();
             toast.success("Book Borrow successfully done");
             fetchBookDetailsData()
             // navigate()
-        }catch(err){
+        } catch (err) {
             console.log(err)
             toast.error(err.response.data)
         }
@@ -71,19 +71,19 @@ const CategoryCardDetails = () => {
 
     return (
         <div className=" py-16 bg-gray-50 ">
-            <div className=" w-11/12 mx-auto bg-gray-100 rounded-md py-6">
-                <h2 className="text-2xl font-semibold text-center">Book Details: </h2>
-                <div className="overflow-hidden md:flex gap-8 space-y-8 md:space-y-0 lg:gap-14 p-4 md:p-10 lg:p-20">
+            <div className=" w-7/12 mx-auto bg-gray-100 rounded-md py-6">
+                <h2 className="text-2xl font-semibold text-center">Discover the Details of Your Next Favorite Book </h2>
+                <div className="overflow-hidden md:flex  space-y-8 md:space-y-0  p-4 md:p-10 lg:p-20 ">
                     <div className="flex-1">
                         <img
                             src={book.image}
                             alt="Book Cover"
-                            className="w-full h-[320px] object-cover rounded-md "
+                            className="w-4/5 h-[350px] object-cover rounded-md"
                         />
                     </div>
 
 
-                    <div className="flex-1">
+                    <div className="flex-1 flex flex-col justify-center">
                         <h2 className="text-3xl font-bold text-gray-800 mb-4">{book.bookName}</h2>
                         <p className="text-lg text-gray-600 mb-2"><span className="font-semibold">Author:</span> {book.authorName} </p>
                         <p className="text-lg text-gray-600 mb-2"><span className="font-semibold">Category:</span> {book.category}</p>
@@ -92,21 +92,14 @@ const CategoryCardDetails = () => {
 
                         <div className="flex items-center mb-4">
                             {/* <ReactStars
-                                count={5}
-                                size={24}
-                                isHalf={true}
-                                value={book?.rating || 0}
-                                edit={false}
-                                activeColor="#ffd700"
-                            /> */}
+                count={5}
+                size={24}
+                isHalf={true}
+                value={book?.rating || 0}
+                edit={false}
+                activeColor="#ffd700"
+            /> */}
 
-                            {/* <Rating
-                                initialRating={book?.rating || 0}
-                                readonly
-                                emptySymbol="far fa-star" 
-                                fullSymbol="fas fa-star" 
-                                fractions={2} 
-                            /> */}
                             <span className="ml-2 text-gray-600">{book.rating}</span>
                         </div>
 
@@ -114,18 +107,18 @@ const CategoryCardDetails = () => {
                             {book.description}
                         </p>
 
-
-                        <button
-                            disabled={book?.quantity <= 0 }
-                            onClick={() => setShowModal(true)}
-                            className="disabled:cursor-not-allowed bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
-                        >
-                            Borrow
-                        </button>
+                        
+                            <button
+                                disabled={book?.quantity <= 0}
+                                onClick={() => setShowModal(true)}
+                                className="disabled:cursor-not-allowed w-fit px-6 py-3 text-white font-semibold bg-pink-500 rounded-full hover:bg-pink-600 focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition-all duration-300 "
+                            >
+                                Borrow
+                            </button>
+                       
                     </div>
                 </div>
             </div>
-
 
             {/* Modal for Borrowed book */}
             {showModal && (

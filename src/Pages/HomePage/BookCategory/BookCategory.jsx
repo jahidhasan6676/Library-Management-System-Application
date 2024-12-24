@@ -3,113 +3,101 @@ import { Link } from "react-router-dom";
 
 const BookCategory = () => {
     return (
-        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
-            {/* card 1 */}
-            <Link to="/bookCategoryCard/Novel">
-                <div className=" bg-white rounded-xl shadow-lg overflow-hidden ">
-                    {/* Image Section */}
-                    <div className=" bg-gray-200">
-                        <img
-                            src="https://hips.hearstapps.com/hmg-prod/images/1-best-thriller-books-index-comp-649d9b68c3157.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"
-                            alt="Category"
-                            className="h-[200px] w-full object-cover"
-                        />
-                    </div>
+        <div className="w-11/12 mx-auto  pb-20">
+            {/* headers */}
+            <div className="space-y-2 text-center pb-10">
+                <h1 className="text-2xl lg:text-4xl  font-semibold">Explore Our Book <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"> Categories</span></h1>
+                <p className="text-sm font-medium text-gray-500">Dive into a world of knowledge with books spanning various genres. <br /> Find your next favorite read today!</p>
+            </div>
 
-                    {/* Text Section */}
-                    <div className="p-4">
-                        <h3 className="text-lg font-bold text-gray-800 mb-2">
-                            Novel
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                            Discover amazing novels that inspire and entertain.
-                        </p>
-                        <button className="block w-full py-2 text-center bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-                            Explore Novels
-                        </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* card 1 */}
+
+                <div className=" bg-gray-100 border border-gray-300 rounded-lg shadow-md">
+                    <div className="text-center bg-teal-600 text-white text-lg font-semibold py-2 px-4 rounded-t-lg">
+                        History
                     </div>
+                    <ul className="p-4 space-y-2">
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Wright Brothers</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Silk Roads</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Third Reich </li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">A People's History</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Civil War Era</li>
+                        <Link to="/bookCategoryCard/History">
+                            <li className="font-semibold text-teal-600 hover:underline cursor-pointer">
+                                View All
+                            </li>
+                        </Link>
+
+                    </ul>
                 </div>
-            </Link>
-            {/* card 2 */}
-            <Link to="/bookCategoryCard/Thriller">
-                <div className=" bg-white rounded-xl shadow-lg overflow-hidden ">
-                    {/* Image Section */}
-                    <div className=" bg-gray-200">
-                        <img
-                            src="https://hips.hearstapps.com/hmg-prod/images/1-best-thriller-books-index-comp-649d9b68c3157.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"
-                            alt="Category"
-                            className="h-[200px] w-full object-cover"
-                        />
-                    </div>
 
-                    {/* Text Section */}
-                    <div className="p-4">
-                        <h3 className="text-lg font-bold text-gray-800 mb-2">
-                            Thriller
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                            Discover amazing novels that inspire and entertain.
-                        </p>
-                        <button className="block w-full py-2 text-center bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-                            Explore Novels
-                        </button>
+                {/* card 2 */}
+
+                <div className=" bg-gray-100 border border-gray-300 rounded-lg shadow-md">
+                    <div className="text-center bg-teal-600 text-white text-lg font-semibold py-2 px-4 rounded-t-lg">
+                        Thriller
                     </div>
+                    <ul className="p-4 space-y-2">
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Great Gatsby</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Pride and Prejudice</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">1984</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Catcher Arts</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">To Kill Mockingbird </li>
+                        <Link to="/bookCategoryCard/Thriller">
+                            <li className="font-semibold text-teal-600 hover:underline cursor-pointer">
+                                View All
+                            </li>
+                        </Link>
+
+                    </ul>
                 </div>
-            </Link>
 
-            {/* card 3 */}
-            <Link to="/bookCategoryCard/History">
-                <div className=" bg-white rounded-xl shadow-lg overflow-hidden ">
-                    {/* Image Section */}
-                    <div className=" bg-gray-200">
-                        <img
-                            src="https://hips.hearstapps.com/hmg-prod/images/1-best-thriller-books-index-comp-649d9b68c3157.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"
-                            alt="Category"
-                            className="h-[200px] w-full object-cover"
-                        />
-                    </div>
 
-                    {/* Text Section */}
-                    <div className="p-4">
-                        <h3 className="text-lg font-bold text-gray-800 mb-2">
-                            History
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                            Discover amazing novels that inspire and entertain.
-                        </p>
-                        <button className="block w-full py-2 text-center bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-                            Explore Novels
-                        </button>
+                {/* card 3 */}
+
+                <div className=" bg-gray-100 border border-gray-300 rounded-lg shadow-md">
+                    <div className="bg-teal-600 text-white text-lg font-semibold py-2 px-4 rounded-t-lg">
+                        Novel
                     </div>
+                    <ul className="p-4 space-y-2">
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Dracula </li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Jane Eyre</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Emma </li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Frankenstein  Arts</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">The Crusades </li>
+                        <Link to="/bookCategoryCard/Novel">
+                            <li className="font-semibold text-teal-600 hover:underline cursor-pointer">
+                                View All
+                            </li>
+                        </Link>
+
+                    </ul>
                 </div>
-            </Link>
 
-            {/* card 4 */}
-            <Link to="/bookCategoryCard/Drama">
-                <div className=" bg-white rounded-xl shadow-lg overflow-hidden ">
-                    {/* Image Section */}
-                    <div className=" bg-gray-200">
-                        <img
-                            src="https://hips.hearstapps.com/hmg-prod/images/1-best-thriller-books-index-comp-649d9b68c3157.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"
-                            alt="Category"
-                            className="h-[200px] w-full object-cover"
-                        />
-                    </div>
 
-                    {/* Text Section */}
-                    <div className="p-4">
-                        <h3 className="text-lg font-bold text-gray-800 mb-2">
-                            Drama
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                            Discover amazing novels that inspire and entertain.
-                        </p>
-                        <button className="block w-full py-2 text-center bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-                            Explore Novels
-                        </button>
+                {/* card 4 */}
+
+                <div className=" bg-gray-100 border border-gray-300 rounded-lg shadow-md">
+                    <div className="text-center bg-teal-600 text-white text-lg font-semibold py-2 px-4 rounded-t-lg">
+                        Drama
                     </div>
+                    <ul className="p-4 space-y-2">
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Hamlet </li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Macbeth </li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Death of a Salesman</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">Oedipus Rex Arts</li>
+                        <li className="text-gray-800 hover:text-teal-600 cursor-pointer">treetcar Named Desire</li>
+                        <Link to="/bookCategoryCard/Drama">
+                            <li className="font-semibold text-teal-600 hover:underline cursor-pointer">
+                                View All
+                            </li>
+                        </Link>
+
+                    </ul>
                 </div>
-            </Link>
+
+            </div>
         </div>
     );
 };
