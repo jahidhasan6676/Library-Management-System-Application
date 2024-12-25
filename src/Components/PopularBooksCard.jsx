@@ -7,7 +7,7 @@ const PopularBooksCard = ({ title, subtitle, image, bgColor, link }) => {
             className={`rounded-lg shadow-lg p-6 ${bgColor} text-white flex justify-between items-center gap-4`}
         >
             <div>
-                <img src={image} alt={title} className="h-40   shadow-lg" />
+                <img src={image} alt={title} className="h-40 animate__animated animate__zoomIn animate__slow animate__infinite  shadow-lg" />
             </div>
             <div>
                 <p className="text-sm opacity-80">{subtitle}</p>

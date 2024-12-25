@@ -2,7 +2,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Shared/SocialAuth/SocialLogin";
 import UseAuth from "../../Hooks/UseAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import loginLottieData from "../../assets/lottie/lottie-login.json"
 import Lottie from "lottie-react";
@@ -13,6 +13,10 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+            document.title = "Login | Library"
+          }, [])
 
     const handleLogin = e => {
         e.preventDefault();
@@ -27,7 +31,7 @@ const Login = () => {
         // user login
         loginUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 setUser(result.user);
                 navigate(location?.state ? location.state : "/")
                 toast.success("Successfully login")

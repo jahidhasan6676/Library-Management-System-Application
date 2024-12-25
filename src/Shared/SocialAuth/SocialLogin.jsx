@@ -17,7 +17,7 @@ const SocialLogin = () => {
             toast.success("Successfully Sing In")
         })
         .catch(error => {
-            console.log(error.message)
+            // console.log(error.message)
         })
     }
     return (

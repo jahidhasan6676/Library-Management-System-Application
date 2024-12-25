@@ -44,7 +44,7 @@ const AddBooks = () => {
             toast.success("Data Successfully Added");
             navigate()
         }catch(err){
-            console.log(err)
+            // console.log(err)
             toast.error(err.message)
         }
     }

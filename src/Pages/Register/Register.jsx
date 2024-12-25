@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SocialLogin from "../../Shared/SocialAuth/SocialLogin";
 import { toast } from "react-toastify";
 import registerLottieData from '../../assets/lottie/lottie-register.json'
@@ -12,6 +12,10 @@ const Register = () => {
     const { createUser, updateUserProfile, setUser } = UseAuth();
     const navigate = useNavigate();
     const [error, setError] = useState('');
+
+    useEffect(() => {
+            document.title = "Register | Library"
+          }, [])
 
 
     const handleRegister = e => {
@@ -39,14 +43,14 @@ const Register = () => {
         // sing Up
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 setUser(result.user);
                 updateUserProfile({ displayName: name, photoURL: photo })
                 navigate("/")
                 toast.success("Successfully Register")
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 

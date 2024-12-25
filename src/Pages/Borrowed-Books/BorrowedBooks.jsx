@@ -4,7 +4,7 @@ import UseAuth from "../../Hooks/UseAuth";
 import BorrowBooksCard from "./BorrowBooksCard";
 import { toast } from "react-toastify";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
-import Swal from "sweetalert2";
+
 
 
 const BorrowedBooks = () => {
@@ -31,12 +31,12 @@ const BorrowedBooks = () => {
     const handleDelete = async (id, bookId) => {
         try {
             const { data } = await axiosSecure.delete(`${import.meta.env.VITE_API_URL}/borrow/${id}?bookId=${bookId}`)
-            console.log(data)
+            // console.log(data)
             fetchBorrowBooks()
             toast.success("Book Successfully Returned");
 
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             toast.error(err.message)
         }
     }
