@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Banner from './Banner/Banner';
 import BookCategory from './BookCategory/BookCategory';
+import PopularBooks from './popular-books/PopularBooks';
 
 const Home = () => {
     useEffect(() => {
@@ -10,6 +11,7 @@ const Home = () => {
         <div className='bg-gray-100'>
             <Banner></Banner>
             <BookCategory></BookCategory>
+            <PopularBooks></PopularBooks>
         </div>
     );
 };
