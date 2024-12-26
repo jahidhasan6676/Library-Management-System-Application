@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "JM Jahid Hasan",
+      "title": "A Paradise of Knowledge",
+      "review": "An amazing space for book love offering the latest and most high-quality titles across genres.",
+      "rating": 5,
+      "date": "12-10-2024"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "title": "Best Bookshop ever!",
+      "review": "I am so happy to find a site where I can shop for unusual items. The packaging was phenomenal and my book arrived on time in perfect condition.",
+      "rating": 4,
+      "date": "12-01-2024"
+    },
+    {
+      "id": 3,
+      "name": "Carlos Gomez",
+      "title": "A Haven for Book Lovers",
+      "review": "Every visit is an immersion into the world of knowledge. Quality books and attentive customer service.",
+      "rating": 5,
+      "date": "19-6-2024"
+    },
+    {
+      "id": 4,
+      "name": "Billal Hossain",
+      "title":"Great Books, Excellent Service",
+      "review": "Not only diverse books but also friendly and helpful staff. A memorable book shopping experience!.",
+      "rating": 5,
+      "date": "15-3-2024"
+    },
+    {
+      "id": 5,
+      "name": "Samuel Lee",
+      "title": "Great for Kids' Books",
+      "review": "Bought books for my kids and they loved them. The recommendations were spot on!",
+      "rating": 3,
+      "date": "22-2-2024"
+    },
+    {
+      "id": 6,
+      "name": "Maria Ivanova",
+      "title":"Great system borrow the Books",
+      "review": "This is an amazing system where books can be borrowed. I borrow books for free and read them!",
+      "rating": 4,
+      "date": "29-5-2024"
+    }
+  ]

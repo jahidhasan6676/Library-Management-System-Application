@@ -19,7 +19,8 @@ Shows the user’s photo and "Logout" if the user is logged in.
 - **JWT Implement**:  JWT Authentication for email/password and social login. Proper handling of private routes with JWT.
 
 ### 11. **External Packages**
-- **React Awesome Reveal**: Our service cards are shown in Zoom format.
+- **React Marquee**: Our client review section used marquee package.
+- **React Lottie**: Our login and register page used react lottie files design.
 - **React Tooltip**: Hovering over the photoURL in the navbar display name with the react Tooltip package.
-- **Animation.Css**: Our Coaching plan shown by animation css.
+- **Animation.Css**: Our popular books shown by animation css.
 - **React-Toastify**: Users login, register, books update and books delete this operation successful and unsuccessful toast message show.

@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from "react";
-import UseAuth from "../../Hooks/UseAuth";
+
 import AllBooksCard from "./AllBooksCard";
 import AllBooksTable from "./AllBooksTable";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
-
+import { motion } from "framer-motion";
+import { easeOut } from "motion";
 
 const AllBooks = () => {
   // const {user} = UseAuth();
@@ -34,6 +35,8 @@ const AllBooks = () => {
     setBooks(data)
   }
 
+  // text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600
+
   return (
     <div className=" py-16 bg-gray-100 min-h-[calc(100vh-355px)]">
 
@@ -41,7 +44,24 @@ const AllBooks = () => {
 
       <div className="w-11/12 mx-auto flex justify-between items-center">
         <div>
-          <h2 className="text-2xl lg:text-4xl  font-semibold">Manage and Update Your <br/> <i><span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Book Collection</span></i> </h2>
+          <h2 className="text-2xl lg:text-4xl font-semibold">
+            Manage and Update Your <br />
+            <i>
+              <motion.span
+               style={{ display: "inline-block", position: "relative" }}
+                animate={{ x: 50, color: ["#f4d03f ", "#28b2e7 ", "#cab312"] }}
+                transition={{
+                  duration: 2,
+                  delay: 1,
+                  ease: "easeOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                Book Collection
+              </motion.span>
+            </i>
+          </h2>
         </div>
 
         <div className="">

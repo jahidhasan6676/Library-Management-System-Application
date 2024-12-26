@@ -63,14 +63,14 @@ const Register = () => {
             <div className="w-11/12 lg:w-9/12 mx-auto lg:flex justify-around items-center">
 
                 <div className="flex-1">
-                    <div className="lg:w-5/6 mx-auto  p-6 bg-white rounded-lg shadow-lg">
+                    <div className="lg:w-3/4 mx-auto  p-6 bg-white rounded-lg shadow-lg">
                         {/* Title */}
-                        <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">
+                        <h2 className="text-3xl font-semibold text-center text-blue-600 mb-4">
                             Register
                         </h2>
 
                         {/* Registration Form */}
-                        <form onSubmit={handleRegister} className="space-y-6">
+                        <form onSubmit={handleRegister} className="space-y-3">
                             {/* Name Field */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -138,7 +138,7 @@ const Register = () => {
                         </form>
 
                         {/* Login Link */}
-                        <div className="mt-4 text-center">
+                        <div className="mt-3 text-center">
                             <p className="text-sm text-gray-600">
                                 Already have an account?
                                 <Link to="/login" className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">

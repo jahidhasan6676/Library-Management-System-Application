@@ -44,9 +44,9 @@ const Login = () => {
 
     return (
         <div className="py-20 bg-gradient-to-br from-blue-100 via-purple-100 to-blue-50">
-            <div className="w-11/12 lg:w-9/12 mx-auto space-y-8 lg:flex justify-around items-center">
+            <div className="w-11/12 lg:w-9/12 mx-auto space-y-4 lg:flex justify-around items-center">
                 <div className=" flex-1 ">
-                    <div className="lg:w-2/3 mx-auto  p-6 bg-white rounded-lg shadow-lg">
+                    <div className="lg:w-2/3 md:w-4/5 mx-auto  p-6 bg-white rounded-lg shadow-lg">
                         {/* Title */}
                         <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">
                             Login
