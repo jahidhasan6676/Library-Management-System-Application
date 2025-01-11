@@ -38,20 +38,20 @@ const AllBooks = () => {
   // text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600
 
   return (
-    <div className=" py-16 bg-gray-100 min-h-[calc(100vh-355px)]">
+    <div className=" py-20 bg-gray-100 min-h-screen">
 
       {/* headers */}
 
-      <div className="w-11/12 mx-auto flex justify-between items-center">
+      <div className="w-11/12 mx-auto flex justify-between ">
         <div>
           <h2 className="text-2xl lg:text-4xl font-semibold">
             Manage and Update Your <br />
             <i>
               <motion.span
                style={{ display: "inline-block", position: "relative" }}
-                animate={{ x: 50, color: ["#f4d03f ", "#28b2e7 ", "#cab312"] }}
+                animate={{ x: 50, color: ["#007bff", "#0056b3", "#003f7f"] }}
                 transition={{
-                  duration: 2,
+                  duration: 6,
                   delay: 1,
                   ease: "easeOut",
                   repeat: Infinity,
@@ -64,9 +64,9 @@ const AllBooks = () => {
           </h2>
         </div>
 
-        <div className="">
+        <div className="space-y-4">
           {/* Dropdown Menu */}
-          <div className="text-center my-4">
+          <div className="text-center">
             <select
               value={viewMode}
               onChange={(e) => setViewMode(e.target.value)}
@@ -78,12 +78,12 @@ const AllBooks = () => {
           </div>
 
           {/* Filter Button */}
-          <div className="text-center my-4">
+          <div className="text-center">
             <button
               onClick={filterAvailableBooks}
-              className="border-2 border-green-500 text-green-500 px-6 py-2 rounded-full hover:bg-green-500 hover:text-white transition-all duration-300"
+              className="border-2 border-blue-500 text-blue-500 px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
             >
-              Show Available Books
+              Available Books
             </button>
           </div>
         </div>

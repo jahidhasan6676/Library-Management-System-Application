@@ -12,7 +12,7 @@ const AllBooksTable = ({ book, idx }) => {
             <td className="border text-center py-2">{rating}</td>
             <td className="text-center py-2">
                 <Link to={`/updateBook/${_id}`}>
-                    <button className="btn btn-neutral">Update</button>
+                    <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-md shadow hover:from-purple-500 hover:to-blue-500 transition-all duration-300">Update</button>
                 </Link>
             </td>
         </tr>

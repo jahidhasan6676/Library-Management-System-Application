@@ -41,12 +41,35 @@ const BorrowedBooks = () => {
         }
     }
     return (
-        <div className="bg-gray-100 min-h-[calc(100vh-355px)] py-16">
-            <h2 className="text-center text-2xl font-semibold">Your Borrowed Books Dashboard</h2>
-            <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-                {
-                    borrowBooks.map(borrow => <BorrowBooksCard key={borrow._id} borrow={borrow} handleDelete={handleDelete}></BorrowBooksCard>)
-                }
+        <div className="bg-gray-100 min-h-[calc(100vh-355px)] py-20">
+            <h2 className="text-center text-2xl font-semibold mb-10">Your Borrowed Books Dashboard</h2>
+            
+
+            <div className="overflow-x-auto overflow-hidden w-11/12 mx-auto">
+                <table className="table table-zebra w-full border-collapse border border-gray-300">
+                    {/* head */}
+                    <thead className="bg-gray-200 text-center text-[16px]">
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>BookName</th>
+                            <th>Category</th>
+                            <th>Borrow Date</th>
+                            <th>Return Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* row 1 */}
+
+                        {
+                            borrowBooks.map((borrow,index) => <BorrowBooksCard key={borrow._id} index={index} borrow={borrow} handleDelete={handleDelete}></BorrowBooksCard>)
+                        }
+
+
+                    </tbody>
+
+                </table>
             </div>
         </div>
     );

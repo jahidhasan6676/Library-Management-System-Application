@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 export default function Banner() {
     return (
-        <div className=' py-20 mx-auto'>
+        <div className=' pb-20 mx-auto'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -33,7 +33,7 @@ export default function Banner() {
                     style={{
                         backgroundImage: `url(${bannerImage1})`,
                         backgroundSize: 'cover',
-                        height: "600px",
+                        height: "550px",
                         width: "full",
                         backgroundPosition: 'center',
                         display: 'flex',
@@ -56,7 +56,7 @@ export default function Banner() {
                     style={{
                         backgroundImage: `url(${bannerImage2})`,
                         backgroundSize: 'cover',
-                        height: "600px",
+                        height: "550px",
                         width: "full",
                         backgroundPosition: 'center',
                         display: 'flex',
@@ -77,7 +77,7 @@ export default function Banner() {
 
                             </ul>
                             <Link
-                                to=''
+                                to='allBooks'
                                 
                             >
                             <button className=' px-4 py-3 mt-8  text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'>Browse Our Digital Library</button>
@@ -95,7 +95,7 @@ export default function Banner() {
                     style={{
                         backgroundImage: `url(${bannerImage3})`,
                         backgroundSize: 'cover',
-                        height: "600px",
+                        height: "550px",
                         width: "full",
                         backgroundPosition: 'center',
                         display: 'flex',

@@ -32,7 +32,7 @@ const PopularBooks = () => {
     ];
 
     return (
-        <div className="w-11/12 lg:w-10/12 mx-auto flex  flex-col  pb-20">
+        <div className="w-11/12  mx-auto flex  flex-col  pb-20">
             <div>
                 <h1 className="text-3xl md:text-4xl font-semibold text-center ">
                     Popular Books

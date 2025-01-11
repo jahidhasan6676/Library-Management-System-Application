@@ -50,7 +50,7 @@ const AddBooks = () => {
     }
     return (
         <div className=" py-20 bg-gray-50">
-            <div className="max-w-4xl mx-auto  mt-10 p-6 bg-white shadow-lg rounded-lg">
+            <div className="max-w-4xl mx-auto   p-6 bg-white shadow-lg rounded-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Add a New Book</h2>
                 <form onSubmit={handleAddBookSubmit} className="space-y-4">
                     <div>

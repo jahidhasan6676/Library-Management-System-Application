@@ -6,7 +6,7 @@ const BookCategory = () => {
         <div className="w-11/12 mx-auto  pb-20">
             {/* headers */}
             <div className="space-y-2 text-center pb-10">
-                <h1 className="text-2xl lg:text-4xl  font-semibold">Explore Our Book <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"> Categories</span></h1>
+                <h1 className="text-2xl lg:text-4xl  font-semibold">Explore Our Book <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500"> Categories</span></h1>
                 <p className="text-sm font-medium text-gray-500">Dive into a world of knowledge with books spanning various genres. <br /> Find your next favorite read today!</p>
             </div>
 

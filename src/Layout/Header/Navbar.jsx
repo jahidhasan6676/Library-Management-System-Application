@@ -26,7 +26,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     <div className="   flex items-center cursor-pointer">
                         <img className='w-[45px]' src={logo} alt="" />
-                        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 hover:scale-110 transition-transform duration-300 cursor-pointer">Books Lovers</h2>
+                        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 hover:scale-110 transition-transform duration-300 cursor-pointer">Books Lovers</h2>
 
                     </div>
                     <div onClick={() => setOpen(!open)} className="lg:hidden cursor-pointer text-3xl ">
@@ -39,16 +39,16 @@ const Navbar = () => {
                     : "hidden"
                     }`}>
                     <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Home</NavLink>
+                        <NavLink to="/" className={({ isActive }) => ` ${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Home</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/allBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >All Books</NavLink>
+                        <NavLink to="/allBooks" className={({ isActive }) => ` ${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >All Books</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/addBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Add Books</NavLink>
+                        <NavLink to="/addBooks" className={({ isActive }) => `${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Add Books</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
-                        <NavLink to="/borrowBooks" className={({ isActive }) => ` ${isActive ? 'text-yellow-400' : 'hover:text-yellow-300'}`} >Borrowed Books</NavLink>
+                        <NavLink to="/borrowBooks" className={({ isActive }) => `${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Borrowed Books</NavLink>
                     </li>
 
                     {

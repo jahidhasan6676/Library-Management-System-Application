@@ -33,7 +33,7 @@ const Footer = () => {
 
                 {/* Section 2 */}
                 <div className="">
-                    <h6 className="text-lg font-semibold text-gray-400 mb-3">Our Campus</h6>
+                    <h6 className="text-lg font-semibold text-gray-400 mb-3">Service</h6>
                     <nav className="flex flex-col gap-2">
                         <Link className="text-gray-300 hover:text-blue-400">Home</Link>
                         <Link className="text-gray-300 hover:text-blue-400">All Books</Link>
