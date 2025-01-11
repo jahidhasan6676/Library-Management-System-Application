@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HelpCenter = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,7 +67,7 @@ const HelpCenter = () => {
                   .filter(item => item.toLowerCase().includes(searchTerm))
                   .map((item, idx) => (
                     <li key={idx} className="text-lg text-gray-600">
-                      <a href="#" className="hover:text-blue-600">{item}</a>
+                      <Link to="" className="hover:text-blue-600">{item}</Link>
                     </li>
                   ))}
               </ul>
