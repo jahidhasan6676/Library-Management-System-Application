@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import BookCategoryAllCard from "../Components/BookCategoryAllCard";
 import CategoryCardDetails from "../Components/CategoryCardDetails";
 import BorrowedBooks from "../Pages/Borrowed-Books/BorrowedBooks";
+import About from "../Pages/About/About";
+import HelpCenter from "../Pages/HelpCenter/HelpCenter";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>
+            },
+            {
+                path:"/about",
+                element:<About></About>
             },
             {
                 path:"/addBooks",
@@ -46,6 +52,10 @@ const router = createBrowserRouter([
             {
                 path:"/borrowBooks",
                 element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
+            },
+            {
+                path:"/helpCenter",
+                element:<HelpCenter></HelpCenter>
             },
             {
                 path:"/login",

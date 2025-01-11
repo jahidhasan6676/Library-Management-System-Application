@@ -35,11 +35,11 @@ const Footer = () => {
                 <div className="">
                     <h6 className="text-lg font-semibold text-gray-400 mb-3">Service</h6>
                     <nav className="flex flex-col gap-2">
-                        <Link className="text-gray-300 hover:text-blue-400">Home</Link>
-                        <Link className="text-gray-300 hover:text-blue-400">All Books</Link>
-                        <Link className="text-gray-300 hover:text-blue-400">Add Books</Link>
-                        <Link className="text-gray-300 hover:text-blue-400">Borrowed Books</Link>
-                        <Link className="text-gray-300 hover:text-blue-400">Help center</Link>
+                        <Link to="/" className="text-gray-300 hover:text-blue-400">Home</Link>
+                        <Link to="/allBooks" className="text-gray-300 hover:text-blue-400">All Books</Link>
+                        <Link to="/addBooks" className="text-gray-300 hover:text-blue-400">Add Books</Link>
+                        <Link to="/borrowBooks" className="text-gray-300 hover:text-blue-400">Borrowed Books</Link>
+                        <Link to="/helpCenter" className="text-gray-300 hover:text-blue-400">Help center</Link>
 
                     </nav>
                 </div>

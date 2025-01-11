@@ -42,6 +42,10 @@ const Navbar = () => {
                         <NavLink to="/" className={({ isActive }) => ` ${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Home</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
+                        <NavLink to="/about" className={({ isActive }) => ` ${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >About us</NavLink>
+                    </li>
+                    {
+                        user ? <><li className="mx-4 my-4 lg:my-0">
                         <NavLink to="/allBooks" className={({ isActive }) => ` ${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >All Books</NavLink>
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
@@ -49,6 +53,10 @@ const Navbar = () => {
                     </li>
                     <li className="mx-4 my-4 lg:my-0">
                         <NavLink to="/borrowBooks" className={({ isActive }) => `${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Borrowed Books</NavLink>
+                    </li></> : ""
+                    }
+                    <li className="mx-4 my-4 lg:my-0">
+                        <NavLink to="/helpCenter" className={({ isActive }) => `${isActive ? 'text-blue-500' : 'hover:text-blue-400'}`} >Help Center</NavLink>
                     </li>
 
                     {
