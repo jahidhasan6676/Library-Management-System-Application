@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import FaqQuestion from "../../Components/FaqQuestion";
 
 const HelpCenter = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+  
   // Sample FAQ categories and items
   const categories = [
     {
@@ -40,44 +40,14 @@ const HelpCenter = () => {
     },
   ];
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
-
+ 
   return (
     <div className="w-11/12 mx-auto py-20">
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Help Center</h1>
-        <input
-          type="text"
-          placeholder="Search for help..."
-          className="mt-4 p-3 w-1/2 border border-gray-300 rounded-md shadow-sm"
-          onChange={handleSearchChange}
-        />
-      </header>
+      
+      <FaqQuestion/>
 
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold text-gray-800">Popular Topics</h2>
-        <div className="mt-4 space-y-4">
-          {categories.map((category, index) => (
-            <div key={index} className="border-b pb-4">
-              <h3 className="text-2xl font-semibold text-gray-700">{category.title}</h3>
-              <ul className="mt-2 space-y-2">
-                {category.items
-                  .filter(item => item.toLowerCase().includes(searchTerm))
-                  .map((item, idx) => (
-                    <li key={idx} className="text-lg text-gray-600">
-                      <Link to="" className="hover:text-blue-600">{item}</Link>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-800">Contact Support</h2>
+      <section className="bg-gray-100 py-10 p-4">
+        <h2 className="text-3xl font-semibold text-gray-800 text-center">Contact Support</h2>
         <form className="mt-6 space-y-4 max-w-md mx-auto">
           <input
             type="text"

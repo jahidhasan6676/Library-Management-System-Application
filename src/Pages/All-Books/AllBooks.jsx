@@ -42,7 +42,7 @@ const AllBooks = () => {
 
       <div className="w-11/12 mx-auto flex justify-between ">
         <div>
-          <h2 className="text-2xl lg:text-4xl font-semibold">
+          <h2 className="text-2xl lg:text-3xl font-semibold">
             Manage and Update Your <br />
             <span>
               Book Collection
@@ -67,7 +67,7 @@ const AllBooks = () => {
           <div className="text-center">
             <button
               onClick={filterAvailableBooks}
-              className="border border-blue-500 text-blue-500 px-12 py-2 rounded-md hover:bg-blue-800 hover:text-white transition-all duration-300">
+              className="border border-blue-500 text-blue-500 px-[50px] py-2 rounded-md hover:bg-blue-800 hover:text-white transition-all duration-300">
               Available Books
             </button>
           </div>
