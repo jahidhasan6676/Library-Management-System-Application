@@ -22,7 +22,7 @@ const BorrowBooksCard = ({ borrow, index, handleDelete }) => {
             <td className="border text-center py-2">{borrowDate}</td>
             <td className="border text-center py-2">{returnDate}</td>
             <td className="border text-center py-2">
-            <button onClick={()=> handleDelete(_id,bookId)} className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-md shadow hover:from-purple-500 hover:to-blue-500 transition-all duration-300"> Return </button>
+            <button onClick={()=> handleDelete(_id,bookId)} className="border px-4 py-2 rounded-md bg-black text-white"> Return </button>
             </td>
         </tr>
     );

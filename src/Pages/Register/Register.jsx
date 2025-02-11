@@ -4,8 +4,8 @@ import UseAuth from "../../Hooks/UseAuth";
 import { useEffect, useState } from "react";
 import SocialLogin from "../../Shared/SocialAuth/SocialLogin";
 import { toast } from "react-toastify";
-import registerLottieData from '../../assets/lottie/lottie-register.json'
-import Lottie from "lottie-react";
+
+
 
 
 const Register = () => {
@@ -60,10 +60,9 @@ const Register = () => {
         <div className="py-20 bg-gradient-to-br from-green-100 via-purple-100 to-blue-50">
 
 
-            <div className="w-11/12 lg:w-9/12 mx-auto lg:flex justify-around items-center">
-
-                <div className="flex-1">
-                    <div className="lg:w-3/4 mx-auto  p-6 bg-white rounded-lg shadow-lg">
+            <div className="w-11/12 lg:w-9/12 mx-auto">
+              
+                    <div className="max-w-lg mx-auto  p-6 bg-white rounded-lg shadow-md">
                         {/* Title */}
                         <h2 className="text-3xl font-semibold text-center text-blue-600 mb-4">
                             Register
@@ -149,11 +148,6 @@ const Register = () => {
 
                         <SocialLogin></SocialLogin>
                     </div>
-                </div>
- 
-                <div className="flex-1 max-w-md">
-                    <Lottie animationData={registerLottieData}></Lottie>
-                </div>
             </div>
         </div>
     );

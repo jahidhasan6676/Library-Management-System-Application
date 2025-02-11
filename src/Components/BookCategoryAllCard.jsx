@@ -28,7 +28,7 @@ const BookCategoryAllCard = () => {
     return (
         <div className="bg-gray-100 min-h-[calc(100vh-355px)] py-16">
               <h1 className="text-2xl font-bold text-center mb-6">Browse Our Collection by Category</h1>
-            <div className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+            <div className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-10">
                 {
                     books.map(book => <BookCategorySingleCard key={book._id} book={book}></BookCategorySingleCard>)
                 }

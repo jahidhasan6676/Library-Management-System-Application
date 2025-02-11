@@ -1,45 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
+
 import FaqQuestion from "../../Components/FaqQuestion";
 
 const HelpCenter = () => {
   
-  // Sample FAQ categories and items
-  const categories = [
-    {
-      title: "General Information",
-      items: [
-        "Library Hours",
-        "Membership Info",
-        "Contact Us",
-      ],
-    },
-    {
-      title: "Borrowing Books",
-      items: [
-        "How to Borrow",
-        "Book Renewal",
-        "Overdue Fees",
-      ],
-    },
-    {
-      title: "Account Support",
-      items: [
-        "How to Reset Password",
-        "Update Profile",
-        "Deactivate Account",
-      ],
-    },
-    {
-      title: "Technical Support",
-      items: [
-        "App Issues",
-        "Browser Compatibility",
-        "Report a Bug",
-      ],
-    },
-  ];
-
+  
  
   return (
     <div className="w-11/12 mx-auto py-20">
@@ -66,7 +31,7 @@ const HelpCenter = () => {
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700"
+            className="w-full bg-blue-800 text-white p-3 rounded-md hover:bg-blue-900"
           >
             Submit
           </button>

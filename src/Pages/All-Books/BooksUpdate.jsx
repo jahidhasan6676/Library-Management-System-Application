@@ -58,8 +58,8 @@ const BooksUpdate = () => {
   }
  
     return (
-        <div className=" py-20 bg-gray-50">
-            <div className="max-w-2xl mx-auto  p-6 bg-white shadow-lg rounded-lg">
+        <div className="py-20 bg-gray-100">
+            <div className="max-w-xl min-h-[calc(100vh-440px)] mx-auto  p-6 bg-white shadow-sm rounded-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Update a Book</h2>
                 <form onSubmit={handleUpdateBookData} className="space-y-4">
                     <div>

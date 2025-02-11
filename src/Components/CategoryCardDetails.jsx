@@ -72,14 +72,14 @@ const CategoryCardDetails = () => {
 
     return (
         <div className=" py-16 bg-gray-50 ">
-            <div className=" w-7/12 mx-auto bg-gray-100 rounded-md py-6">
+            <div className="w-11/12 lg:w-7/12 mx-auto bg-gray-100 rounded-md py-6">
                 <h2 className="text-2xl font-semibold text-center">Discover the Details of Your Next Favorite Book </h2>
                 <div className="overflow-hidden md:flex  space-y-8 md:space-y-0  p-4 md:p-10 lg:p-20 ">
-                    <div className="flex-1">
+                    <div className="flex-1 flex justify-center items-center md:justify-start md:items-start">
                         <img
                             src={book.image}
                             alt="Book Cover"
-                            className="w-4/5 h-[350px] object-cover rounded-md"
+                            className="md:w-4/5 h-[350px] object-cover rounded-md"
                         />
                     </div>
 
@@ -107,7 +107,7 @@ const CategoryCardDetails = () => {
                         <button
                             disabled={book?.quantity <= 0}
                             onClick={() => setShowModal(true)}
-                            className="disabled:cursor-not-allowed w-fit px-6 py-3 text-white font-semibold bg-pink-500 rounded-full hover:bg-pink-600 focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition-all duration-300 "
+                            className="disabled:cursor-not-allowed w-fit px-6 py-2 font-semibold border border-blue-500 rounded-md hover:bg-blue-800 hover:text-white"
                         >
                             Borrow
                         </button>

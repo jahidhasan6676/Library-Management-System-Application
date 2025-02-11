@@ -7,12 +7,12 @@ const BookCategorySingleCard = ({ book }) => {
 
 
     return (
-        <div className="hover:bg-white p-6 rounded-lg overflow-hidden ">
+        <div className="hover:bg-white border p-6 rounded-lg overflow-hidden ">
             <div className="">
                 <img
                     src={image}
                     alt="Book Cover"
-                    className="w-full h-[300px] object-cover rounded-lg"
+                    className="w-[100px] h-[150px] mx-auto object-cover"
                 />
 
             </div>
@@ -42,7 +42,7 @@ const BookCategorySingleCard = ({ book }) => {
 
 
                 <Link to={`/categoryCardDetails/${_id}`} className="w-full">
-                    <button className="mt-4  px-6 py-3 font-semibold text-blue-600 border border-blue-600 rounded-lg bg-white shadow-md hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-300 ease-in-out active:scale-95">
+                    <button className="mt-4  px-6 py-3 font-semibold text-blue-500 border border-b-blue-600 rounded-lg bg-white hover:bg-blue-800 hover:text-white">
                         View Details
                     </button>
                 </Link>

@@ -45,7 +45,7 @@ const AllBooksCard = ({ book }) => {
 
                 <div className="mt-6">
                     <Link to={`/updateBook/${_id}`} >
-                        <button className=" bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-md shadow hover:from-purple-500 hover:to-blue-500 transition-all duration-300">Update</button>
+                        <button className="border px-4 py-2 rounded-md bg-black text-white">Update</button>
                     </Link>
                 </div>
             </div>
