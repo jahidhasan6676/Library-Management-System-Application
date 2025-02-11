@@ -19,7 +19,7 @@ const Navbar = () => {
     
 
     return (
-        <nav className="py-5 bg-gray-800 text-white w-full  fixed top-0 z-50">
+        <nav className="py-4 bg-gray-800 text-white w-full  fixed top-0 z-50">
 
             <div className="w-11/12 mx-auto lg:flex lg:justify-between lg:items-center ">
                 {/* logo and name */}
@@ -34,7 +34,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 {/* page name */}
-                <ul className={`lg:flex lg:items-center lg:static absolute lg:z-auto z-[-1] bg-gray-800  w-full left-0 lg:w-auto lg:pb-0 pb-6 lg:pl-0 pl-7 transition-all duration-500 ease-in  ${open
+                <ul className={`lg:flex lg:items-center lg:static absolute lg:z-auto text-[16px] z-[-1] bg-gray-800  w-full left-0 lg:w-auto lg:pb-0 pb-6 lg:pl-0 pl-7 transition-all duration-500 ease-in  ${open
                     ? "top-[76px] opacity-100 "
                     : "hidden"
                     }`}>

@@ -9,14 +9,14 @@ import { useEffect } from "react";
 const AddBooks = () => {
 
     const navigate = useNavigate();
-    const {user} = UseAuth();
+    const { user } = UseAuth();
     const axiosSecure = UseAxiosSecure();
 
     useEffect(() => {
         document.title = "Add Books | Library"
-      }, [])
+    }, [])
 
-    const handleAddBookSubmit = async e =>{
+    const handleAddBookSubmit = async e => {
         e.preventDefault();
         const form = e.target;
         const image = form.image.value;
@@ -37,22 +37,23 @@ const AddBooks = () => {
             rating,
             email
         }
-       
-        try{
+
+        try {
             await axiosSecure.post(`${import.meta.env.VITE_API_URL}/books`, bookData);
             form.reset();
             toast.success("Data Successfully Added");
             navigate()
-        }catch(err){
+        } catch (err) {
             // console.log(err)
             toast.error(err.message)
         }
     }
     return (
-        <div className=" py-20 bg-gray-50">
-            <div className="max-w-4xl mx-auto   p-6 bg-white shadow-lg rounded-lg">
+        <div className=" py-20 bg-gray-50 p-4">
+            <div className="max-w-3xl mx-auto   p-6 lg:p-10 bg-white shadow-sm rounded-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Add a New Book</h2>
                 <form onSubmit={handleAddBookSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> 
                     <div>
                         <label className="block text-gray-700 font-medium">Book Cover Image:</label>
                         <input
@@ -102,15 +103,6 @@ const AddBooks = () => {
                         </select>
                     </div>
                     <div>
-                        <label className="block text-gray-700 font-medium">Short Description:</label>
-                        <textarea
-                            name="description"
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            rows="4"
-                            required
-                        ></textarea>
-                    </div>
-                    <div>
                         <label className="block text-gray-700 font-medium">Rating:</label>
                         <input
                             type="number"
@@ -121,6 +113,17 @@ const AddBooks = () => {
                             required
                         />
                     </div>
+                    </div>
+                    <div>
+                        <label className="block text-gray-700 font-medium">Short Description:</label>
+                        <textarea
+                            name="description"
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
                     <button
                         type="submit"
                         className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"

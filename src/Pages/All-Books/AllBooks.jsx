@@ -35,7 +35,6 @@ const AllBooks = () => {
     setBooks(data)
   }
 
-  // text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600
 
   return (
     <div className=" py-20 bg-gray-100 min-h-screen">
@@ -46,21 +45,9 @@ const AllBooks = () => {
         <div>
           <h2 className="text-2xl lg:text-4xl font-semibold">
             Manage and Update Your <br />
-            <i>
-              <motion.span
-               style={{ display: "inline-block", position: "relative" }}
-                animate={{ x: 50, color: ["#007bff", "#0056b3", "#003f7f"] }}
-                transition={{
-                  duration: 6,
-                  delay: 1,
-                  ease: "easeOut",
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-              >
-                Book Collection
-              </motion.span>
-            </i>
+            <span>
+              Book Collection
+            </span>
           </h2>
         </div>
 
