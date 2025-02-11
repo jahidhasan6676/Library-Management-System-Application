@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import AllBooksCard from "./AllBooksCard";
 import AllBooksTable from "./AllBooksTable";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
-import { motion } from "framer-motion";
-import { easeOut } from "motion";
+
 
 const AllBooks = () => {
   // const {user} = UseAuth();
@@ -37,7 +36,7 @@ const AllBooks = () => {
 
 
   return (
-    <div className=" py-20 bg-gray-100 min-h-screen">
+    <div className=" py-20 bg-gray-1 min-h-screen">
 
       {/* headers */}
 
@@ -68,8 +67,7 @@ const AllBooks = () => {
           <div className="text-center">
             <button
               onClick={filterAvailableBooks}
-              className="border-2 border-blue-500 text-blue-500 px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
-            >
+              className="border border-blue-500 text-blue-500 px-12 py-2 rounded-md hover:bg-blue-800 hover:text-white transition-all duration-300">
               Available Books
             </button>
           </div>
@@ -80,7 +78,7 @@ const AllBooks = () => {
       <div className="w-11/12 mx-auto mt-10">
         {
           viewMode === "card" ? (
-            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 ">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 ">
               {
                 books.map(book => <AllBooksCard key={book._id} book={book}></AllBooksCard>)
               }

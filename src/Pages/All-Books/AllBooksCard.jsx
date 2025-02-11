@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-
+import { motion } from 'framer-motion';
 
 const AllBooksCard = ({ book }) => {
     const { _id, bookName, authorName, category, rating, image } = book || {};
@@ -10,15 +10,20 @@ const AllBooksCard = ({ book }) => {
 
 
     return (
-        <div className="bg-white rounded-lg overflow-hidden ">
-            <div className=" bg-gray-100 flex justify-center items-center">
+        <motion.div
+            className="border p-4 rounded-sm overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1 }}
+        >
+            <div className=" flex justify-center items-center">
                 <img
                     src={image}
                     alt={bookName}
-                    className="h-[250px] w-full object-cover"
+                    className="h-[170px] w-[100px] mx-auto object-cover"
                 />
             </div>
-            <div className="p-4">
+            <div className="mt-4">
                 <h3 className="text-lg font-semibold text-gray-800 truncate">
                     {bookName}
                 </h3>
@@ -44,7 +49,7 @@ const AllBooksCard = ({ book }) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
